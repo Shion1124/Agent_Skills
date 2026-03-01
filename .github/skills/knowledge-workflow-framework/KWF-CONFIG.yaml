@@ -1,0 +1,316 @@
+# Knowledge Workflow Framework Configuration
+# Customize this file for your team
+
+team:
+  name: "My Development Team"
+  repository_url: "https://github.com/yourorg/yourrepo"
+  contact: "your-team@example.com"
+
+knowledge_base:
+  location: ".github/skills/knowledge-workflow-framework/knowledge-base"
+  auto_generate_index: true
+  index_update_interval: "hourly"
+  enable_search: true
+  enable_versioning: true
+
+# Decision categories - customize for your team
+decision_categories:
+  architecture:
+    description: "Architectural decisions"
+    examples: ["Monolith vs Microservices", "Frontend Framework Choice"]
+  
+  tools:
+    description: "Tool and library selections"
+    examples: ["Testing Framework", "Build Tool", "CI/CD System"]
+  
+  database:
+    description: "Database and data modeling decisions"
+    examples: ["SQL vs NoSQL", "Schema Design", "Migration Strategy"]
+  
+  security:
+    description: "Security-related decisions"
+    examples: ["Authentication Method", "Encryption Strategy", "Data Privacy"]
+  
+  process:
+    description: "Team process and workflow decisions"
+    examples: ["Code Review Policy", "Release Process", "Documentation Standards"]
+  
+  performance:
+    description: "Performance optimization decisions"
+    examples: ["Caching Strategy", "Database Indexing", "Frontend Optimization"]
+
+# Pattern categories - customize for your team
+pattern_categories:
+  api-design:
+    description: "REST/GraphQL API patterns"
+    examples:
+      - "Error Handling in APIs"
+      - "Pagination Strategies"
+      - "Authentication & Authorization"
+      - "Rate Limiting"
+  
+  testing:
+    description: "Testing patterns and best practices"
+    examples:
+      - "Playwright Best Practices"
+      - "Unit Test Structure"
+      - "Mocking Strategies"
+      - "Test Data Management"
+  
+  database:
+    description: "Database design and optimization"
+    examples:
+      - "Query Optimization"
+      - "Connection Pool Management"
+      - "Transaction Handling"
+      - "Migration Patterns"
+  
+  security:
+    description: "Security patterns and practices"
+    examples:
+      - "Secure API Client"
+      - "Input Validation"
+      - "Secrets Management"
+      - "OWASP Prevention"
+  
+  performance:
+    description: "Performance patterns"
+    examples:
+      - "Caching Strategies"
+      - "Lazy Loading"
+      - "Batch Processing"
+      - "Resource Cleanup"
+  
+  frontend:
+    description: "Frontend development patterns"
+    examples:
+      - "React Component Architecture"
+      - "State Management"
+      - "Error Boundaries"
+      - "Accessibility Patterns"
+  
+  backend:
+    description: "Backend development patterns"
+    examples:
+      - "Async/Await Patterns"
+      - "Error Handling"
+      - "Logging Strategy"
+      - "Configuration Management"
+  
+  devops:
+    description: "DevOps and infrastructure patterns"
+    examples:
+      - "Docker Best Practices"
+      - "Kubernetes Manifests"
+      - "CI/CD Workflows"
+      - "Monitoring Setup"
+
+# Lesson/Incident categories
+lesson_categories:
+  operations:
+    description: "Operational issues and resolutions"
+  
+  performance:
+    description: "Performance-related incidents"
+  
+  security:
+    description: "Security incidents and vulnerabilities"
+  
+  development:
+    description: "Development process issues"
+  
+  infrastructure:
+    description: "Infrastructure and deployment issues"
+
+# Search configuration
+search:
+  indexed_fields:
+    - title
+    - description
+    - tags
+    - category
+    - content
+  
+  enable_full_text_search: true
+  search_min_length: 2
+  max_results: 20
+
+# Integration settings
+integrations:
+  github:
+    enabled: true
+    auto_create_issues_for_decisions: false
+    auto_link_prs_to_decisions: true
+  
+  slack:
+    enabled: false
+    webhook_url: ""  # Set your Slack webhook
+    notify_on_new_decision: true
+    notify_on_incident: true
+  
+  agentops:
+    enabled: false
+    api_key: ""  # Set your AgentOps API key
+    track_kb_references: true
+  
+  llmops:
+    enabled: false
+    track_pattern_effectiveness: true
+
+# Workflow automation
+automation:
+  # Auto-generate summaries
+  generate_monthly_summary: true
+  summary_template: "standard"
+  
+  # Review reminders
+  quarterly_review_reminder: true
+  decision_review_interval_days: 90
+  
+  # Archival
+  auto_archive_old_lessons: true
+  archive_after_days: 730  # 2 years
+
+# Template settings
+templates:
+  # Decision template
+  decision_template: "standard"
+  required_decision_fields:
+    - title
+    - context
+    - decision
+    - consequences
+    - alternatives_considered
+  
+  # Pattern template
+  pattern_template: "standard"
+  required_pattern_fields:
+    - title
+    - problem
+    - solution
+    - when_to_use
+    - when_not_to_use
+  
+  # Lesson template
+  lesson_template: "standard"
+  required_lesson_fields:
+    - title
+    - date
+    - root_cause
+    - resolution
+    - prevention_checklist
+
+# Metrics and reporting
+metrics:
+  track_decision_usage: true
+  track_pattern_effectiveness: true
+  track_lesson_impact: true
+  
+  # Dashboard
+  dashboard_enabled: true
+  dashboard_refresh_interval: "hourly"
+  
+  # Reports
+  weekly_report: true
+  monthly_report: true
+  quarterly_review: true
+
+# Access control
+access:
+  # Who can create/edit
+  can_create_decision: "developers"
+  can_create_pattern: "developers"
+  can_create_lesson: "developers"
+  
+  # Who can review
+  decision_reviewers: ["@tech-lead", "@architect"]
+  pattern_reviewers: ["@tech-lead"]
+  
+  # Notification
+  notify_reviewers: true
+  notify_team_on_new_entry: true
+
+# Versioning
+versioning:
+  enabled: true
+  track_changes: true
+  retention_days: 365
+
+# Custom fields (extend standard templates)
+custom_fields:
+  decision:
+    - name: "business_impact"
+      type: "text"
+      required: false
+      description: "Business justification"
+    
+    - name: "cost_implications"
+      type: "text"
+      required: false
+      description: "Cost/resource implications"
+  
+  pattern:
+    - name: "maintenance_effort"
+      type: "select"
+      options: ["low", "medium", "high"]
+      required: false
+      description: "Estimated maintenance effort"
+    
+    - name: "maturity_level"
+      type: "select"
+      options: ["experimental", "stable", "proven"]
+      required: false
+      description: "Pattern maturity level"
+  
+  lesson:
+    - name: "timeline_to_resolution"
+      type: "text"
+      required: false
+      description: "How long to resolve"
+    
+    - name: "financial_impact"
+      type: "text"
+      required: false
+      description: "Cost impact of the incident"
+
+# Notification settings
+notifications:
+  enable_notifications: true
+  
+  events:
+    new_decision: true
+    new_pattern: true
+    new_lesson: true
+    decision_updated: false
+    pattern_deprecated: true
+    lesson_follow_up_due: true
+  
+  channels:
+    email: true
+    slack: false
+    github_discussions: true
+
+# Archive/Cleanup
+cleanup:
+  # Keep knowledge base tidy
+  auto_clean_broken_references: true
+  auto_consolidate_similar_entries: false  # Manual review recommended
+  archive_superseded_entries: true
+
+# Performance
+performance:
+  index_cache: true
+  search_cache: true
+  cache_ttl_minutes: 60
+
+# Logging
+logging:
+  enabled: true
+  log_file: ".github/skills/knowledge-workflow-framework/kwf.log"
+  log_level: "INFO"
+
+# Development mode
+development:
+  enabled: false  # Set to true to enable debug output
+  verbose: false
+  validate_on_startup: false
