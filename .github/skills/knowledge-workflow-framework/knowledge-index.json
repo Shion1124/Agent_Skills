@@ -1,12 +1,283 @@
 {
   "knowledge_base_version": "1.0",
-  "last_updated": "2026-03-01T18:45:26.233273",
-  "entries": [],
-  "search_tags": [],
+  "last_updated": "2026-03-02T13:07:53.602697",
+  "entries": [
+    {
+      "id": "decision-001",
+      "type": "decision",
+      "title": "Decision: Adopt TypeScript for Frontend",
+      "path": "knowledge-base/decisions/architecture/decision-001.md",
+      "created": "2026-03-02T11:48:46.013940",
+      "modified": "2026-03-02T11:48:46.013940",
+      "status": "ACCEPTED",
+      "tags": [
+        "frontend",
+        "typescript",
+        "tooling"
+      ],
+      "date": "2026-02-20",
+      "search_preview": " Decision: Adopt TypeScript for Frontend\n\nDate: 2026-02-20  \nStatus: ACCEPTED  \nDecision Makers: @frontend-lead, @dev-team  \n\n Context\nTeam is starting a new React application and needs to choose between JavaScript and TypeScript.\n\n Decision\nUse TypeScript for:\n1. Early error detection through static typing\n2. Better IDE support and code completion\n3. Improved long-term maintainability\n4. Better documentation through type signatures\n\n Consequences\n- Initial setup complexity\n- Team learning curve"
+    },
+    {
+      "id": "context7-version-report",
+      "type": "decision",
+      "title": "Context7 Version & Dependency Report",
+      "path": "knowledge-base/decisions/dependency-management/version-report-20260302-122418.md",
+      "created": "2026-03-02T12:24:18.180386",
+      "modified": "2026-03-02T12:24:18.180386",
+      "tags": [
+        "versioning",
+        "dependencies",
+        "security",
+        "context7"
+      ],
+      "date": "2026-03-02",
+      "search_preview": " Context7 Version & Dependency Report\n\nDate: 2026-03-02 12:24:18  \nTool: Context7 Version Manager  \nCheck Type: Comprehensive Version Audit  \n\n Executive Summary\n\n| Metric | Value | Status |\n|--------|-------|--------|\n| Total Dependencies | 48 | \u2139\ufe0f |\n| Up-to-date | 42 | \u2705 |\n| Minor Updates Available | 4 | \u26a0\ufe0f |\n| Major Updates Available | 2 | \u26a0\ufe0f |\n| Security Issues | 1 | \ud83d\udd34 |\n| Version Mismatches | 0 | \u2705 |\n\n Core Library Versions\n\n Locked (Major.Minor)\n\n| Library | Current | Latest in Policy | St"
+    },
+    {
+      "id": "context7-version-report",
+      "type": "decision",
+      "title": "Context7 Version & Dependency Report",
+      "path": "knowledge-base/decisions/dependency-management/version-report-20260302-130732.md",
+      "created": "2026-03-02T13:07:32.888082",
+      "modified": "2026-03-02T13:07:32.888082",
+      "tags": [
+        "versioning",
+        "dependencies",
+        "security",
+        "context7"
+      ],
+      "date": "2026-03-02",
+      "search_preview": " Context7 Version & Dependency Report\n\nDate: 2026-03-02 13:07:32  \nTool: Context7 Version Manager  \nCheck Type: Comprehensive Version Audit  \n\n Executive Summary\n\n| Metric | Value | Status |\n|--------|-------|--------|\n| Total Dependencies | 48 | \u2139\ufe0f |\n| Up-to-date | 42 | \u2705 |\n| Minor Updates Available | 4 | \u26a0\ufe0f |\n| Major Updates Available | 2 | \u26a0\ufe0f |\n| Security Issues | 1 | \ud83d\udd34 |\n| Version Mismatches | 0 | \u2705 |\n\n Core Library Versions\n\n Locked (Major.Minor)\n\n| Library | Current | Latest in Policy | St"
+    },
+    {
+      "id": "context7-version-report",
+      "type": "decision",
+      "title": "Context7 Version & Dependency Report",
+      "path": "knowledge-base/decisions/dependency-management/version-report-20260302-120146.md",
+      "created": "2026-03-02T12:01:46.255071",
+      "modified": "2026-03-02T12:01:46.255071",
+      "tags": [
+        "versioning",
+        "dependencies",
+        "security",
+        "context7"
+      ],
+      "date": "2026-03-02",
+      "search_preview": " Context7 Version & Dependency Report\n\nDate: 2026-03-02 12:01:46  \nTool: Context7 Version Manager  \nCheck Type: Comprehensive Version Audit  \n\n Executive Summary\n\n| Metric | Value | Status |\n|--------|-------|--------|\n| Total Dependencies | 48 | \u2139\ufe0f |\n| Up-to-date | 42 | \u2705 |\n| Minor Updates Available | 4 | \u26a0\ufe0f |\n| Major Updates Available | 2 | \u26a0\ufe0f |\n| Security Issues | 1 | \ud83d\udd34 |\n| Version Mismatches | 0 | \u2705 |\n\n Core Library Versions\n\n Locked (Major.Minor)\n\n| Library | Current | Latest in Policy | St"
+    },
+    {
+      "id": "pattern-001",
+      "type": "pattern",
+      "title": "Pattern: Error Handling in Async Operations",
+      "path": "knowledge-base/patterns/async-handling/pattern-001.md",
+      "created": "2026-03-02T11:48:46.013964",
+      "modified": "2026-03-02T11:48:46.013964",
+      "complexity": "Intermediate",
+      "tags": [
+        "async",
+        "error-handling",
+        "promises",
+        "typescript"
+      ],
+      "category": "async-handling",
+      "search_preview": " Pattern: Error Handling in Async Operations\n\nCategory: Async Handling  \nComplexity: Intermediate  \nAuthor: Team  \nDate: 2026-02-25  \n\n Problem\nAsync code can silently fail if errors are not properly handled, leading to:\n- Unhandled promise rejections\n- Resource leaks\n- Silent data loss\n\n Solution\n\n \u2705 GOOD - Using try-catch with async-await\n\ntypescript\nasync function fetchUserData(userId: string) {\n  try {\n    const response = await fetch(/api/users/${userId});\n    if (!response.ok) {\n      thro"
+    },
+    {
+      "id": "serena-code-quality",
+      "type": "pattern",
+      "title": "Code Quality Analysis Report - Serena",
+      "path": "knowledge-base/patterns/code-quality/code-quality-report-20260302-120146.md",
+      "created": "2026-03-02T12:01:46.175388",
+      "modified": "2026-03-02T12:01:46.175388",
+      "tags": [
+        "code-quality",
+        "serena",
+        "metrics",
+        "analysis"
+      ],
+      "category": "code-quality-patterns",
+      "search_preview": " Code Quality Analysis Report - Serena\n\nDate: 2026-03-02 12:01:46  \nAnalyzer: Serena Code Quality Tool  \nTarget: src/  \nAnalysis Duration: 3.2s  \n\n Overall Quality Score\n\n \ud83d\udcc8 Overall: 78/100 (Good)\n\n| Category | Score | Status |\n|----------|-------|--------|\n| Readability | 82/100 | \u2705 Good |\n| Maintainability | 72/100 | \u26a0\ufe0f Attention Needed |\n| Testability | 75/100 | \u2705 Good |\n| Security | 80/100 | \u2705 Good |\n| Performance | 76/100 | \u26a0\ufe0f Attention Needed |\n\n Code Metrics\n\n| Metric | Value | Target | S"
+    },
+    {
+      "id": "serena-code-quality",
+      "type": "pattern",
+      "title": "Code Quality Analysis Report - Serena",
+      "path": "knowledge-base/patterns/code-quality/code-quality-report-20260302-122358.md",
+      "created": "2026-03-02T12:23:58.939070",
+      "modified": "2026-03-02T12:23:58.939070",
+      "tags": [
+        "code-quality",
+        "serena",
+        "metrics",
+        "analysis"
+      ],
+      "category": "code-quality-patterns",
+      "search_preview": " Code Quality Analysis Report - Serena\n\nDate: 2026-03-02 12:23:58  \nAnalyzer: Serena Code Quality Tool  \nTarget: src/  \nAnalysis Duration: 3.2s  \n\n Overall Quality Score\n\n \ud83d\udcc8 Overall: 78/100 (Good)\n\n| Category | Score | Status |\n|----------|-------|--------|\n| Readability | 82/100 | \u2705 Good |\n| Maintainability | 72/100 | \u26a0\ufe0f Attention Needed |\n| Testability | 75/100 | \u2705 Good |\n| Security | 80/100 | \u2705 Good |\n| Performance | 76/100 | \u26a0\ufe0f Attention Needed |\n\n Code Metrics\n\n| Metric | Value | Target | S"
+    },
+    {
+      "id": "serena-code-quality",
+      "type": "pattern",
+      "title": "Code Quality Analysis Report - Serena",
+      "path": "knowledge-base/patterns/code-quality/code-quality-report-20260302-130732.md",
+      "created": "2026-03-02T13:07:32.799455",
+      "modified": "2026-03-02T13:07:32.799455",
+      "tags": [
+        "code-quality",
+        "serena",
+        "metrics",
+        "analysis"
+      ],
+      "category": "code-quality-patterns",
+      "search_preview": " Code Quality Analysis Report - Serena\n\nDate: 2026-03-02 13:07:32  \nAnalyzer: Serena Code Quality Tool  \nTarget: src/  \nAnalysis Duration: 3.2s  \n\n Overall Quality Score\n\n \ud83d\udcc8 Overall: 78/100 (Good)\n\n| Category | Score | Status |\n|----------|-------|--------|\n| Readability | 82/100 | \u2705 Good |\n| Maintainability | 72/100 | \u26a0\ufe0f Attention Needed |\n| Testability | 75/100 | \u2705 Good |\n| Security | 80/100 | \u2705 Good |\n| Performance | 76/100 | \u26a0\ufe0f Attention Needed |\n\n Code Metrics\n\n| Metric | Value | Target | S"
+    },
+    {
+      "id": "context7-security-alert",
+      "type": "lesson",
+      "title": "\ud83d\udd34 Security Alert - CVE-2023-48726",
+      "path": "knowledge-base/lessons/2026/security-alert-20260302-122418.md",
+      "created": "2026-03-02T12:24:18.180628",
+      "modified": "2026-03-02T12:24:18.180628",
+      "severity": "medium",
+      "tags": [
+        "security",
+        "context7",
+        "cve",
+        "alert"
+      ],
+      "category": "dependency-issues",
+      "search_preview": " \ud83d\udd34 Security Alert - CVE-2023-48726\n\nDiscovered: 2026-03-02  \nPackage: lodash  \nCurrent Version: 4.17.20  \nVulnerable To: Prototype pollution  \nCVE: CVE-2023-48726  \nCVSS Score: 6.5 (Medium)  \n\n Impact\n\nPrototype pollution vulnerability allows attackers to modify object prototypes.\n\n Fix\n\nUpgrade to 4.17.21 or later:\n\nbash\nnpm update lodash\n\n\nTime to Fix: < 1 minute  \nTesting Required: Smoke test  \n\n Status\n\n:hourglass: Applied: 2026-03-02 12:24:18\n\n---\n\nRelated: decision-145 \"Version Management "
+    },
+    {
+      "id": "playwright-test-report",
+      "type": "lesson",
+      "title": "Playwright Test Execution Report",
+      "path": "knowledge-base/lessons/2026/test-report-20260302-130732.md",
+      "created": "2026-03-02T13:07:32.681362",
+      "modified": "2026-03-02T13:07:32.681362",
+      "tags": [
+        "testing",
+        "playwright",
+        "e2e",
+        "automated"
+      ],
+      "category": "test-failures",
+      "search_preview": " Playwright Test Execution Report\n\nDate: 2026-03-02 13:07:32  \nType: Automated Result Recording  \nStatus: \u2705 Execution Summary  \n\n Execution Summary\n\n| Metric | Value |\n|--------|-------|\n| Total Tests | 24 |\n| Passed | 22 |\n| Failed | 2 |\n| Skipped | 0 |\n| Pass Rate | 91.7% |\n| Duration | 2m 45s |\n\n Test Coverage\n\n| Browser | Tests | Pass | Fail |\n|---------|-------|------|------|\n| Chromium | 24 | 22 | 2 |\n| Firefox | 24 | 21 | 3 |\n| WebKit | 24 | 22 | 2 |\n\n Failed Tests\n\n Login Modal - Firefox"
+    },
+    {
+      "id": "context7-security-alert",
+      "type": "lesson",
+      "title": "\ud83d\udd34 Security Alert - CVE-2023-48726",
+      "path": "knowledge-base/lessons/2026/security-alert-20260302-130732.md",
+      "created": "2026-03-02T13:07:32.888269",
+      "modified": "2026-03-02T13:07:32.888269",
+      "severity": "medium",
+      "tags": [
+        "security",
+        "context7",
+        "cve",
+        "alert"
+      ],
+      "category": "dependency-issues",
+      "search_preview": " \ud83d\udd34 Security Alert - CVE-2023-48726\n\nDiscovered: 2026-03-02  \nPackage: lodash  \nCurrent Version: 4.17.20  \nVulnerable To: Prototype pollution  \nCVE: CVE-2023-48726  \nCVSS Score: 6.5 (Medium)  \n\n Impact\n\nPrototype pollution vulnerability allows attackers to modify object prototypes.\n\n Fix\n\nUpgrade to 4.17.21 or later:\n\nbash\nnpm update lodash\n\n\nTime to Fix: < 1 minute  \nTesting Required: Smoke test  \n\n Status\n\n:hourglass: Applied: 2026-03-02 13:07:32\n\n---\n\nRelated: decision-145 \"Version Management "
+    },
+    {
+      "id": "playwright-test-report",
+      "type": "lesson",
+      "title": "Playwright Test Execution Report",
+      "path": "knowledge-base/lessons/2026/test-report-20260302-120015.md",
+      "created": "2026-03-02T12:00:15.493868",
+      "modified": "2026-03-02T12:00:15.493868",
+      "tags": [
+        "testing",
+        "playwright",
+        "e2e",
+        "automated"
+      ],
+      "category": "test-failures",
+      "search_preview": " Playwright Test Execution Report\n\nDate: 2026-03-02 12:00:15  \nType: Automated Result Recording  \nStatus: \u2705 Execution Summary  \n\n Execution Summary\n\n| Metric | Value |\n|--------|-------|\n| Total Tests | 24 |\n| Passed | 22 |\n| Failed | 2 |\n| Skipped | 0 |\n| Pass Rate | 91.7% |\n| Duration | 2m 45s |\n\n Test Coverage\n\n| Browser | Tests | Pass | Fail |\n|---------|-------|------|------|\n| Chromium | 24 | 22 | 2 |\n| Firefox | 24 | 21 | 3 |\n| WebKit | 24 | 22 | 2 |\n\n Failed Tests\n\n Login Modal - Firefox"
+    },
+    {
+      "id": "playwright-test-report",
+      "type": "lesson",
+      "title": "Playwright Test Execution Report",
+      "path": "knowledge-base/lessons/2026/test-report-20260302-120038.md",
+      "created": "2026-03-02T12:00:38.284487",
+      "modified": "2026-03-02T12:00:38.284487",
+      "tags": [
+        "testing",
+        "playwright",
+        "e2e",
+        "automated"
+      ],
+      "category": "test-failures",
+      "search_preview": " Playwright Test Execution Report\n\nDate: 2026-03-02 12:00:38  \nType: Automated Result Recording  \nStatus: \u2705 Execution Summary  \n\n Execution Summary\n\n| Metric | Value |\n|--------|-------|\n| Total Tests | 24 |\n| Passed | 22 |\n| Failed | 2 |\n| Skipped | 0 |\n| Pass Rate | 91.7% |\n| Duration | 2m 45s |\n\n Test Coverage\n\n| Browser | Tests | Pass | Fail |\n|---------|-------|------|------|\n| Chromium | 24 | 22 | 2 |\n| Firefox | 24 | 21 | 3 |\n| WebKit | 24 | 22 | 2 |\n\n Failed Tests\n\n Login Modal - Firefox"
+    },
+    {
+      "id": "context7-security-alert",
+      "type": "lesson",
+      "title": "\ud83d\udd34 Security Alert - CVE-2023-48726",
+      "path": "knowledge-base/lessons/2026/security-alert-20260302-120146.md",
+      "created": "2026-03-02T12:01:46.255261",
+      "modified": "2026-03-02T12:01:46.255261",
+      "severity": "medium",
+      "tags": [
+        "security",
+        "context7",
+        "cve",
+        "alert"
+      ],
+      "category": "dependency-issues",
+      "search_preview": " \ud83d\udd34 Security Alert - CVE-2023-48726\n\nDiscovered: 2026-03-02  \nPackage: lodash  \nCurrent Version: 4.17.20  \nVulnerable To: Prototype pollution  \nCVE: CVE-2023-48726  \nCVSS Score: 6.5 (Medium)  \n\n Impact\n\nPrototype pollution vulnerability allows attackers to modify object prototypes.\n\n Fix\n\nUpgrade to 4.17.21 or later:\n\nbash\nnpm update lodash\n\n\nTime to Fix: < 1 minute  \nTesting Required: Smoke test  \n\n Status\n\n:hourglass: Applied: 2026-03-02 12:01:46\n\n---\n\nRelated: decision-145 \"Version Management "
+    },
+    {
+      "id": "playwright-test-report",
+      "type": "lesson",
+      "title": "Playwright Test Execution Report",
+      "path": "knowledge-base/lessons/2026/test-report-20260302-122340.md",
+      "created": "2026-03-02T12:23:40.241020",
+      "modified": "2026-03-02T12:23:40.241020",
+      "tags": [
+        "testing",
+        "playwright",
+        "e2e",
+        "automated"
+      ],
+      "category": "test-failures",
+      "search_preview": " Playwright Test Execution Report\n\nDate: 2026-03-02 12:23:40  \nType: Automated Result Recording  \nStatus: \u2705 Execution Summary  \n\n Execution Summary\n\n| Metric | Value |\n|--------|-------|\n| Total Tests | 24 |\n| Passed | 22 |\n| Failed | 2 |\n| Skipped | 0 |\n| Pass Rate | 91.7% |\n| Duration | 2m 45s |\n\n Test Coverage\n\n| Browser | Tests | Pass | Fail |\n|---------|-------|------|------|\n| Chromium | 24 | 22 | 2 |\n| Firefox | 24 | 21 | 3 |\n| WebKit | 24 | 22 | 2 |\n\n Failed Tests\n\n Login Modal - Firefox"
+    }
+  ],
+  "search_tags": [
+    "alert",
+    "analysis",
+    "async",
+    "automated",
+    "code-quality",
+    "context7",
+    "cve",
+    "dependencies",
+    "e2e",
+    "error-handling",
+    "frontend",
+    "metrics",
+    "playwright",
+    "promises",
+    "security",
+    "serena",
+    "testing",
+    "tooling",
+    "typescript",
+    "versioning"
+  ],
   "stats": {
-    "total_decisions": 0,
-    "total_patterns": 0,
-    "total_lessons": 0,
-    "by_category": {}
+    "total_decisions": 4,
+    "total_patterns": 4,
+    "total_lessons": 7,
+    "by_category": {
+      "async-handling": 1,
+      "code-quality-patterns": 3,
+      "dependency-issues": 3,
+      "test-failures": 4
+    }
   }
 }

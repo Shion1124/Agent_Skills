@@ -229,7 +229,8 @@ This is a template. Create your own patterns based on team learnings.
             return entries
         
         for md_file in dir_path.rglob("*.md"):
-            if md_file.name == "*.md" or "example" in md_file.name:
+            # Skip example template files
+            if "example" in md_file.name:
                 continue
             
             entry = self._parse_markdown(md_file, entry_type, metadata_fields)
@@ -291,30 +292,33 @@ This is a template. Create your own patterns based on team learnings.
         
         issues = []
         
-        # Check for orphaned files
-        for md_file in self.kb_path.rglob("*.md"):
-            if md_file.name.startswith("_"):
-                continue
-            
-            # Check for front matter
-            content = md_file.read_text()
-            if not content.startswith("---"):
-                issues.append(f"⚠️  Missing front matter: {md_file.relative_to(self.kb_path)}")
-            
-            # Check for title
-            if not re.search(r'^# ', content, re.MULTILINE):
-                issues.append(f"⚠️  Missing title: {md_file.relative_to(self.kb_path)}")
+        # Check for orphaned files (only within knowledge-base/)
+        # Templates and documentation files are excluded
+        if self.kb_path.joinpath("knowledge-base").exists():
+            for md_file in self.kb_path.joinpath("knowledge-base").rglob("*.md"):
+                if md_file.name.startswith("_"):
+                    continue
+                
+                # Check for front matter
+                content = md_file.read_text()
+                if not content.startswith("---"):
+                    issues.append(f"⚠️  Missing front matter: {md_file.relative_to(self.kb_path)}")
+                
+                # Check for title
+                if not re.search(r'^# ', content, re.MULTILINE):
+                    issues.append(f"⚠️  Missing title: {md_file.relative_to(self.kb_path)}")
         
-        # Check for broken references
-        for md_file in self.kb_path.rglob("*.md"):
-            content = md_file.read_text()
-            # Find references like [decision-001], [pattern-010]
-            refs = re.findall(r'\[(decision|pattern|lesson)-\d+\]', content)
-            for ref in refs:
-                # Check if referenced file exists
-                ref_path = self._find_entry(ref)
-                if not ref_path:
-                    issues.append(f"❌ Broken reference {ref} in {md_file.relative_to(self.kb_path)}")
+        # Check for broken references (only within knowledge-base/)
+        if self.kb_path.joinpath("knowledge-base").exists():
+            for md_file in self.kb_path.joinpath("knowledge-base").rglob("*.md"):
+                content = md_file.read_text()
+                # Find references like [decision-001], [pattern-010]
+                refs = re.findall(r'\[(decision|pattern|lesson)-\d+\]', content)
+                for ref in refs:
+                    # Check if referenced file exists
+                    ref_path = self._find_entry(ref)
+                    if not ref_path:
+                        issues.append(f"❌ Broken reference {ref} in {md_file.relative_to(self.kb_path)}")
         
         # Report
         if issues:
